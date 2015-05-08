@@ -18,7 +18,7 @@ public class StatisticsFixedPool {
 		Runnable worker = new Runnable() {
 			public void run() {
 				try {
-					new DataCollector();
+					new DataCollector().initialize();
 				} catch (Exception e) {
 				}
 			}

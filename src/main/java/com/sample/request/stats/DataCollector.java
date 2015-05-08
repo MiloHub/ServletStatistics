@@ -22,9 +22,7 @@ public class DataCollector {
 	public  static String URL = 
 			"http://en.wikipedia.org/wiki/Main_Page";
 
-	public DataCollector() throws ClientProtocolException, IOException {
-		this.initialize();
-
+	public DataCollector()  {
 	}
 
 	@Override
@@ -39,7 +37,9 @@ public class DataCollector {
 				.append(" : 90 th Percentile ")
 				.append(this.get90thPercentile())
 				.append(" : 95 th Percentile ")
-				.append(this.get95thPercentile()).append("}").toString();
+				.append(this.get95thPercentile())
+				.append(" : data collected ")
+				.append(this.dataBuffer).append("}").toString();
 	}
 
 	public void initialize() throws ClientProtocolException, IOException {

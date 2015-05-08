@@ -17,6 +17,7 @@ import com.sample.request.stats.Publisher;
 
 public class StatisticsFixedDelay {
 	
+	
 	final static Logger logger = Logger.getLogger(StatisticsFixedPool.class);
 	private static final double[] PERCENTS = makePercentValues();
 
@@ -25,6 +26,8 @@ public class StatisticsFixedDelay {
 
 	int bufferSize = 10;
 	int publishInterval = 100;
+
+	// Server server;
 
 	AtomicLong totalRequests = new AtomicLong();
 

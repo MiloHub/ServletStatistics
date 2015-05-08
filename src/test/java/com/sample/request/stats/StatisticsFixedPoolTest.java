@@ -1,10 +1,14 @@
 package com.sample.request.stats;
 
+import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import org.apache.http.client.ClientProtocolException;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.sample.request.stats.monitor.StatisticsFixedPool;
 
 public class StatisticsFixedPoolTest {
 
@@ -17,17 +21,16 @@ public class StatisticsFixedPoolTest {
 	@Test
 	public void testSampleRequest100Request() {
 		DataCollector.requestCallSize = 10;
-		final int dimSize = 10;
 		ExecutorService executor = Executors.newFixedThreadPool(5);
 		Runnable worker = new Runnable() {
 			public void run() {
 				try {
-					new DataCollector();
+					new DataCollector().initialize();
 				} catch (Exception e) {
 				}
 			}
 		};
-		for (int i = 0; i < dimSize; i++) {
+		for (int i = 0; i < DataCollector.requestCallSize; i++) {
 			executor.submit(worker);
 		}
 		executor.shutdown();
@@ -42,7 +45,7 @@ public class StatisticsFixedPoolTest {
 		Runnable worker = new Runnable() {
 			public void run() {
 				try {
-					new DataCollector();
+					new DataCollector().initialize();
 				} catch (Exception e) {
 				}
 			}
@@ -56,7 +59,9 @@ public class StatisticsFixedPoolTest {
 	}
 	
 	@Test
-	public void testExecuteCommand() {
+	public void testExecuteCommand() throws ClientProtocolException, IOException {
+		StatisticsFixedPool sfp = new StatisticsFixedPool();
+		sfp.executeCommand();
 		
 	}
 

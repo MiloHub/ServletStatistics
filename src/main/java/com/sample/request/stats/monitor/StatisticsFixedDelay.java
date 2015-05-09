@@ -14,7 +14,13 @@ import org.apache.log4j.Logger;
 import com.sample.request.stats.DataDistribution;
 import com.sample.request.stats.Percent;
 import com.sample.request.stats.Publisher;
-
+/**
+ * Provides stats information with fixed delay in millisec for parallel request.
+ * 
+ * executeCommand uses publishInterval value to define the fixed delay.
+ * 
+ *
+ */
 public class StatisticsFixedDelay {
 	
 	

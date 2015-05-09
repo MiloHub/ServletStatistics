@@ -11,7 +11,13 @@ import org.apache.log4j.Logger;
 
 import com.sample.request.stats.DataCollector;
 import com.sample.request.stats.DataBucketCollector;
-
+/**
+ * Provides stats information with fixed pool size for parallel request.
+ * 
+ * executeCommand uses parallelreq value to define the pool size.
+ * 
+ *
+ */
 public class StatisticsFixedPool {
 	final static Logger logger = Logger.getLogger(StatisticsFixedPool.class);
 	public void executeCommand(int PARALLELREQ) throws ClientProtocolException, IOException {

@@ -60,6 +60,7 @@ public class StatisticsBucketFixedPoolTest {
 	
 	@Test
 	public void testExecuteCommand() throws ClientProtocolException, IOException {
+		DataBucketCollector.requestCallSize = 	10;
 		StatisticsBucketFixedPool sfp = new StatisticsBucketFixedPool();
 		sfp.executeCommand();
 		

@@ -10,7 +10,7 @@ public class DataCollectorTest {
 
 	@Test
 	public void testPercentile() throws ClientProtocolException, IOException {
-		DataCollector dc = new DataCollector();
+		DataBucketCollector dc = new DataBucketCollector();
 		for (int i = 0; i < 10; i++) {
 			dc.addData(200+i);
 		}

@@ -87,11 +87,11 @@ public class StatisticsFixedDelay {
 
 	public void executeCommand() throws ClientProtocolException, IOException {
 		this.setBufferSize(1000);
-		this.setPublishInterval(2140);
+		this.setPublishInterval(3000);
 		this.initialize();
 		CloseableHttpClient httpclient = null;
 		try {
-			for (int i = 0; i < 99; i++) {
+			for (int i = 0; i < 100; i++) {
 				int timeout = 5;
 				RequestConfig config = RequestConfig.custom()
 						.setConnectTimeout(timeout * 1000)

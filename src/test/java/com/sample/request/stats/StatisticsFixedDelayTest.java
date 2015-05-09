@@ -11,8 +11,11 @@ public class StatisticsFixedDelayTest {
 	
 	@Test
 	public void testStatsWithFixedDelay() throws ClientProtocolException, IOException  {
+		System.out.println("test execute command with bucketed fixed deplay parallel request : start");
 		final StatisticsFixedDelay ss = new StatisticsFixedDelay();
 		ss.executeCommand();
+		System.out.println("test execute command with bucketed fixed deplay parallel request : end");
+		
 	}
 
 }

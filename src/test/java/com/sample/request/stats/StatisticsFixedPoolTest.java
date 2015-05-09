@@ -21,7 +21,9 @@ public class StatisticsFixedPoolTest {
 	}
 
 	@Test
-	public void testSampleRequest100Request() {
+	public void testSampleRequest10N100Request() {
+		System.out.println("test execute command with N parallel request : 10 : start");
+		
 		ExecutorService executor =
 				  new ThreadPoolExecutor(
 				    10, // core thread pool size
@@ -38,10 +40,12 @@ public class StatisticsFixedPoolTest {
 		while (!executor.isTerminated()) {
 		}
 		DataCollector.printValue();
+		System.out.println("test execute command with N parallel request : 10 : end");
 	}
 	
 	@Test
-	public void testSampleRequest20Bucket100Request() {
+	public void testSampleRequest20N100Request() {
+		System.out.println("test execute command with N parallel request : 20 : start");
 		ExecutorService executor =
 				  new ThreadPoolExecutor(
 				    20, // core thread pool size
@@ -58,13 +62,20 @@ public class StatisticsFixedPoolTest {
 		while (!executor.isTerminated()) {
 		}
 		DataCollector.printValue();
+		System.out.println("test execute command with N parallel request : 20 : end");
+		
 	}
-	
+	/**
+	 * test with N parallel request size param
+	 * @throws ClientProtocolException
+	 * @throws IOException
+	 */
 	@Test
 	public void testExecuteCommand() throws ClientProtocolException, IOException {
+		System.out.println("test execute command with N parallel request : 10 : start");
 		StatisticsFixedPool sfp = new StatisticsFixedPool();
-		sfp.executeCommand();
-		
+		sfp.executeCommand(10);
+		System.out.println("test execute command with N parallel request : 10 : end");
 	}
 
 }

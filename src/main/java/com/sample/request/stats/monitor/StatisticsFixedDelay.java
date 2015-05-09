@@ -18,7 +18,7 @@ import com.sample.request.stats.Publisher;
 public class StatisticsFixedDelay {
 	
 	
-	final static Logger logger = Logger.getLogger(StatisticsFixedPool.class);
+	final static Logger logger = Logger.getLogger(StatisticsBucketFixedPool.class);
 	private static final double[] PERCENTS = makePercentValues();
 
 	private DataDistribution dataDist = new DataDistribution(1, PERCENTS); 

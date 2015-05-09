@@ -8,7 +8,7 @@ import org.apache.http.client.ClientProtocolException;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.sample.request.stats.monitor.StatisticsFixedPool;
+import com.sample.request.stats.monitor.StatisticsBucketFixedPool;
 
 public class StatisticsBucketFixedPoolTest {
 
@@ -60,7 +60,7 @@ public class StatisticsBucketFixedPoolTest {
 	
 	@Test
 	public void testExecuteCommand() throws ClientProtocolException, IOException {
-		StatisticsFixedPool sfp = new StatisticsFixedPool();
+		StatisticsBucketFixedPool sfp = new StatisticsBucketFixedPool();
 		sfp.executeCommand();
 		
 	}

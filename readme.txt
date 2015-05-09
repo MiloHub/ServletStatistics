@@ -20,3 +20,12 @@ Project build using Maven style.
 maven install to clean and compile.
 
 Use maven test to run the program. 
+
+
+
+Program has three types of stats collection 
+
+1. Bucketed fixed pool statistics  
+2. Bucketed fixed delay statistics
+3. ThreadPool fixed size statistics
+

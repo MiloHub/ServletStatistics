@@ -11,7 +11,7 @@ navigate to test resource to find example.
 #########
 Project intented for to
 
-Make 100 HTTP GET requests to http://en.wikipedia.org/wiki/Main_Page and print
+Make 100 HTTP GET requests and print
 
 the following statistics for the response time to stdout: 
 
@@ -24,6 +24,7 @@ the following statistics for the response time to stdout:
 
 Uses multi threaded parallel processing with N request at a give time. 
 
+Run program
 
 Project build using Maven style. 
 
